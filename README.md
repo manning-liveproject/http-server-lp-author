@@ -1,2 +1,2 @@
-# deploy-and-orchestrate-scalable-microservices-with-k8s--lp-author
-Repository for liveProject: Deploy and Orchestrate Scalable Microservices with K8s
+# basic-concepts-of-rust-lp-author
+Repository for liveProject: Basic Concepts of Rust
