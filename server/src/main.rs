@@ -16,6 +16,15 @@ async fn handle_request(req: Request<Body>) -> Result<Response<Body>, hyper::Err
         // Simply echo the body back to the client.
         (&Method::POST, "/echo") => Ok(Response::new(req.into_body())),
 
+        (&Method::POST, "/parrot") => {
+            let body_bytes = hyper::body::to_bytes(req).await?;
+            let body_string = String::from_utf8(body_bytes.to_vec()).unwrap();
+
+            let mut reply : String = String::from("You said: ");
+            reply.push_str(&body_string);
+            Ok(Response::new(Body::from(reply)))
+        }
+
         (&Method::POST, "/echo/reversed") => {
             let whole_body = hyper::body::to_bytes(req.into_body()).await?;
 
