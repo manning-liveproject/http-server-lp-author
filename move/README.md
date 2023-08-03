@@ -43,7 +43,7 @@ For containerd based systems, such as the Docker Desktop and many flavors of Kub
 you just need to specify that the WasmEdge application image is for the `wasi/wasm` platform.
 
 ```
-$ docker buildx build --platform wasi/wasm -t secondstate/rust-example-move .
+$ docker buildx build --provenance=false --platform wasi/wasm -t secondstate/rust-example-move .
 ... ...
 $ docker push secondstate/rust-example-move
 ```
